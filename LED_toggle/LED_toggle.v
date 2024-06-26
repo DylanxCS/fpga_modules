@@ -1,4 +1,4 @@
-module and_gate(
+module LED_toggle(
 
   input	SW1, input SW2,
   input	SW3, input SW4,
@@ -10,10 +10,16 @@ module and_gate(
  
 reg r_SW1 = 1'b0;
 reg r_LED1 = 1'b0;
+wire w_SW1;
+
+debounce_switch Instance
+  (.CLK(CLK),
+   .Switch(SW1),
+   .o_Switch(w_SW1));
 
 always @(posedge CLK) begin
-	r_SW1 <= SW1;
-	if (SW1 == 1'b0 && r_SW1 == 1'b1) begin
+	r_SW1 <= w_SW1;
+	if (w_SW1 == 1'b0 && r_SW1 == 1'b1) begin
 		r_LED1 <= ~r_LED1;
 	end
 end
