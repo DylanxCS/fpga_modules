@@ -1,0 +1,12 @@
+[submodule "tests"]
+	path = tests
+	url = https://github.com/YosysHQ/nextpnr-tests
+[submodule "fpga-interchange-schema"]
+	path = 3rdparty/fpga-interchange-schema
+	url = https://github.com/SymbiFlow/fpga-interchange-schema.git
+[submodule "himbaechel/uarch/xilinx/meta"]
+	path = himbaechel/uarch/xilinx/meta
+	url = https://github.com/gatecat/nextpnr-xilinx-meta
+[submodule "3rdparty/corrosion"]
+	path = 3rdparty/corrosion
+	url = https://github.com/corrosion-rs/corrosion

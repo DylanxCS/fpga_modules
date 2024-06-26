@@ -1,0 +1,5 @@
+*
+!.gitignore
+!example.v
+!hx8kboard.pcf
+!Makefile

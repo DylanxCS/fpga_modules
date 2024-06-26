@@ -1,0 +1,5 @@
+*
+!.gitignore
+!example.v
+!icezum.pcf
+!Makefile

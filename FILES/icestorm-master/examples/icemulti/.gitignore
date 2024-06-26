@@ -1,0 +1,6 @@
+*
+!.gitignore
+!app?.v
+!icestick.pcf
+!Makefile
+!README

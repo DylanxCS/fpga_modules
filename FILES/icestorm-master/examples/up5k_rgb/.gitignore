@@ -1,0 +1,6 @@
+*
+!.gitignore
+!Makefile*
+!README
+!rgb*.pcf
+!rgb.v

@@ -1,0 +1,6 @@
+*
+!.gitignore
+!example.v
+!icebreaker.pcf
+!Makefile
+!README

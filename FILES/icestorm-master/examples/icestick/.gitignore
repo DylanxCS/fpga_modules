@@ -1,0 +1,9 @@
+*
+!.gitignore
+!checker_tb.v
+!checker.v
+!example.v
+!icestick.pcf
+!Makefile
+!rs232demo_tb.v
+!rs232demo.v

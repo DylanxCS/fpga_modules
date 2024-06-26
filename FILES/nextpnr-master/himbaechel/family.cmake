@@ -1,0 +1,8 @@
+set(HIMBAECHEL_UARCHES "example;gowin;xilinx")
+foreach(uarch ${HIMBAECHEL_UARCHES})
+	add_subdirectory(${family}/uarch/${uarch})
+    aux_source_directory(${family}/uarch/${uarch} HM_UARCH_FILES)
+    foreach(target ${family_targets})
+        target_sources(${target} PRIVATE ${HM_UARCH_FILES})
+    endforeach()
+endforeach(uarch)
