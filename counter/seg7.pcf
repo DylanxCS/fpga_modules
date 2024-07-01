@@ -1,0 +1,16 @@
+set_io -nowarn LED1  56
+
+# PMOD I/O
+set_io -nowarn SW1  53
+
+# CLOCK
+set_io -nowarn CLK 15
+
+#DISPLAY
+set_io -nowarn S1_A  3
+set_io -nowarn S1_B  4
+set_io -nowarn S1_C  93
+set_io -nowarn S1_D  91
+set_io -nowarn S1_E  90
+set_io -nowarn S1_F  1
+set_io -nowarn S1_G  2
