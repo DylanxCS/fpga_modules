@@ -1,4 +1,4 @@
-module binary_to_7seg(
+module Binary_To_Seven_Seg(
 
   input CLK, 
   input [3:0] binary_num,

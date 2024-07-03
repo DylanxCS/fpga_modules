@@ -1,4 +1,4 @@
-module seg7(
+module Seven_Seg_Counter(
 
   input	CLK,
   input SW1,
@@ -41,7 +41,7 @@ always @(posedge CLK) begin
 	end
 end
 
-binary_to_7seg Instance2(
+Binary_To_Seven_Seg Instance2(
    .CLK(CLK),
    .binary_num(r_Count1),
    .o_S1_A(w_S1_A),

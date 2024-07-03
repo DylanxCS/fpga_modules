@@ -1,4 +1,4 @@
-module debounce_switch(
+module Debounce_Switch(
 	input CLK,
 	input Switch,
 	output o_Switch);
