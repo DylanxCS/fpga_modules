@@ -12,6 +12,7 @@
 module UART_TX_top(
 input CLK,
 input RX,
+output TX,
 output S1_A, 
 output S1_B, 
 output S1_C, 
@@ -27,8 +28,9 @@ output S2_E,
 output S2_F, 
 output S2_G);
 
-wire w_TX_DV;
-reg [7:0] w_TX_Byte;
+wire w_RX_DV;
+reg [7:0] w_RX_Byte;
+wire w_TX_Active, w_TX_Serial;
 
 //wire w_RX;
 wire w_S1_A;
@@ -45,6 +47,16 @@ wire w_S2_D;
 wire w_S2_E;
 wire w_S2_F;
 wire w_S2_G;
+
+ UART_TX #(.CLKS_PER_BIT(217)) UART_TX_Inst
+  (.CLK(CLK),
+   .i_TX_DV(w_RX_DV),
+   .i_TX_Byte(w_RX_Byte), 
+   .TX(w_TX_Serial),
+   .o_TX_Active(w_TX_Active),
+   .o_TX_Done());
+
+assign TX = w_TX_Active ? w_TX_Serial : 1'b1;
 
 UART_RX #(.CLKS_PER_BIT(217)) UART_RX_Inst(
 .CLK(CLK),
