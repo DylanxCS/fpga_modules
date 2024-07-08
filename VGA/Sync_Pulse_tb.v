@@ -1,3 +1,7 @@
+//RUN TB: iverilog -o simulation_tb Sync_Pulse.v Sync_Pulse_tb.v
+//	  vvp simulation_tb
+
+
 `timescale 1ns/10ps
 module Sync_Pulse_tb();
   

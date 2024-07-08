@@ -14,25 +14,26 @@ output H_pulse, V_pulse
 // H-Sync = High for 25000 Clock cycles
 // V-Sync = High for 43537.4149 Clock cycles 
 
-reg [14:0] r_CountCol = 0;
-reg [15:0] r_CountRow = 0;
+reg [9:0] r_CountCol = 0;
+reg [9:0] r_CountRow = 0;
 reg r_H_pulse = 1'b1;
 reg r_V_pulse = 1'b1;
 
 always @(posedge CLK)
 begin
-   if (r_CountCol < 38400)// maybe this should be 540
+   if (r_CountCol < 640)// maybe this should be 38400
     r_H_pulse <= 1'b1;
-  else if (r_CountCol < 48000)// maybe this should be 800
+  else if (r_CountCol < 800)// maybe this should be 48000
     r_H_pulse <= 1'b0;
   else
     r_CountCol <= 0;
+    r_H_pulse <= 1'b1;
   
   r_CountCol <= r_CountCol + 1;
   
-  if (r_CountRow < 28800)
+  if (r_CountRow < 480)// maybe this should be 28800
     r_V_pulse <= 1'b1;
-  else if (r_CountRow < 31500)
+  else if (r_CountRow < 525)// maybe this should be 31500
     r_V_pulse <= 1'b0;
   else
     r_CountRow <= 0;
