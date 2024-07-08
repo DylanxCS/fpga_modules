@@ -26,15 +26,15 @@ begin
     if (r_CountCol > 25000)
       r_H_pulse <= 1'b0;
   else begin
-    r_CountCol <= 0;
+    //r_CountCol <= 0;
     r_H_pulse <= 1'b1; end
   
   if (r_CountRow < 47619)
     r_CountRow <= r_CountRow + 1;
-    if (r_Count > 43537)
+  if (r_CountRow > 43537)
       r_V_pulse <= 1'b0;
   else begin
-    r_CountRow <= 0;
+    //r_CountRow <= 0;
     r_V_pulse <= 1'b1; end
 end
 

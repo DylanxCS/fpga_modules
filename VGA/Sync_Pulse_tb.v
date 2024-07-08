@@ -27,8 +27,17 @@ module Sync_Pulse_tb();
     end
 
     // Stop simulation when both H_sync and V_sync have triggered
-    if (h_sync_triggered && v_sync_triggered)
-      $finish;
+    //if (h_sync_triggered && v_sync_triggered)
+      //$finish;
+  end
+  
+  initial
+  begin
+    $dumpfile("dump.vcd");
+    $dumpvars(0, inst);
+    
+    #2200000
+    $finish;
   end
   
 endmodule
