@@ -21,21 +21,23 @@ reg r_V_pulse = 1'b1;
 
 always @(posedge CLK)
 begin
-  if (r_CountCol < 31250)
-    r_CountCol <= r_CountCol + 1;
-    if (r_CountCol > 25000)
-      r_H_pulse <= 1'b0;
-  else begin
-    //r_CountCol <= 0;
-    r_H_pulse <= 1'b1; end
+   if (r_CountCol < 38400)// maybe this should be 540
+    r_H_pulse <= 1'b1;
+  else if (r_CountCol < 48000)// maybe this should be 800
+    r_H_pulse <= 1'b0;
+  else
+    r_CountCol <= 0;
   
-  if (r_CountRow < 47619)
-    r_CountRow <= r_CountRow + 1;
-  if (r_CountRow > 43537)
-      r_V_pulse <= 1'b0;
-  else begin
-    //r_CountRow <= 0;
-    r_V_pulse <= 1'b1; end
+  r_CountCol <= r_CountCol + 1;
+  
+  if (r_CountRow < 28800)
+    r_V_pulse <= 1'b1;
+  else if (r_CountRow < 31500)
+    r_V_pulse <= 1'b0;
+  else
+    r_CountRow <= 0;
+    
+  r_CountRow <= r_CountRow + 1;
 end
 
 assign H_pulse = r_H_pulse;
