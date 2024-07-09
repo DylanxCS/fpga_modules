@@ -25,18 +25,20 @@ begin
     r_H_pulse <= 1'b1;
   else if (r_CountCol < 800)// maybe this should be 48000
     r_H_pulse <= 1'b0;
-  else
+  else begin
     r_CountCol <= 0;
     r_H_pulse <= 1'b1;
-  
+  end
   r_CountCol <= r_CountCol + 1;
   
   if (r_CountRow < 480)// maybe this should be 28800
     r_V_pulse <= 1'b1;
   else if (r_CountRow < 525)// maybe this should be 31500
     r_V_pulse <= 1'b0;
-  else
+  else begin
     r_CountRow <= 0;
+    r_V_pulse <= 1'b1;
+  end
     
   r_CountRow <= r_CountRow + 1;
 end
