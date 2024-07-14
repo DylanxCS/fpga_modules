@@ -6,12 +6,12 @@
 module Sync_Pulse_tb();
   
   reg r_Clock = 0;
-  wire H_Pulse, V_Pulse;
+  wire H_Sync, V_Sync;
   
   Sync_Pulse inst(
     .CLK(r_Clock),
-    .H_pulse(H_Pulse),
-    .V_pulse(V_Pulse));
+    .H_Sync(H_Sync),
+    .V_Sync(V_Sync));
   
   always #(20)
     r_Clock <= ~r_Clock;
@@ -20,12 +20,12 @@ module Sync_Pulse_tb();
   reg v_sync_triggered = 0;
 
   always @(posedge r_Clock)       begin
-    if (H_Pulse == 1'b0 && !h_sync_triggered) begin
+    if (H_Sync == 1'b0 && !h_sync_triggered) begin
       h_sync_triggered <= 1'b1;
       $display("H_sync went to 1'b0 at time %0t", $time);
     end
 
-    if (V_Pulse == 1'b0 && !v_sync_triggered) begin
+    if (V_Sync == 1'b0 && !v_sync_triggered) begin
       v_sync_triggered <= 1'b1;
       $display("V_sync went to 1'b0 at time %0t", $time);
     end
