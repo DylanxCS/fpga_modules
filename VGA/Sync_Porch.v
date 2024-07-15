@@ -1,14 +1,22 @@
+//This module alters the Sync_pulse signal to include the front & back porch
+
 //Whole area -> 800x525, Visible area -> 640x480
 //Hsync -> front: 18, back: 50, pulse: 92
 //Vsync -> front: 10, back: 33, pulse: 2
 
-//Sync pulse gives 1 for visible area then 0 for the rest
-//This module should alter the Sync_pulse signal to include the front & back porch
 
-//GOAL: convert hsync porch pixel values to clock cycles
-//RECALL: 60 clock cycles per pixel. Each row contains 800 pixels.
-//RECALL: 48000 clock cycles per row -> 60*800
-
-//Hsync -> front: 1080, back: 3000, pulse: 5520
-//Vsync -> front: 600, back: 1980, pulse 120
-
+module Sync_Porch(
+  input CLK,
+  input i_H_Sync, i_V_Sync
+  output o_H_Sync, o_V_Sync);
+  
+  reg r_H_Sync = 1'b1;
+  reg r_V_Sync = 1'b1;
+  reg r_Count = 0;
+  
+  always @(posedge CLK)
+  begin
+    if (i_H_Sync == 1'b0 && r_H_Sync = 1'b1)
+    begin
+      if (r_Count < 
+      

@@ -16,30 +16,19 @@ reg r_V_Sync = 1'b1;
 
 always @(posedge CLK)
 begin
-   if (r_CountCol < 640) begin
-    r_H_Sync <= 1'b1;
-    r_CountCol <= r_CountCol + 1; end
-  else if (r_CountCol < 800) begin
-    r_H_Sync <= 1'b0;
-    r_CountCol <= r_CountCol + 1; end
-  else 
-  begin
-    if (r_CountRow < 2) begin
-      r_V_Sync <= 1'b1;
-      r_CountRow <= r_CountRow + 1; end
-    else if (r_CountRow < 3) begin 
-      r_V_Sync <= 1'b0;
-      r_CountRow <= r_CountRow + 1; end
-    else begin
-      r_CountRow <= 0;
-      r_V_Sync <= 1'b1;
-    end
-    r_CountCol <= 0;
-    r_H_Sync <= 1'b1;
-  end
+  if (r_CountCol == 799)
+    begin
+      r_CountCol <= 0;
+      if (r_CountRow == 524)
+        r_CountRow <= 0;
+      else
+        r_CountRow <= r_CountRow + 1;
+      end
+    else
+      r_CountCol <= r_CountCol + 1;
 end
 
-assign H_Sync = r_H_Sync;
-assign V_Sync = r_V_Sync;
+assign H_Sync = (r_CountCol < 640) ? 1'b1 : 1'b0;
+assign V_Sync = (r_CountRow < 480) ? 1'b1 : 1'b0;
 
 endmodule
