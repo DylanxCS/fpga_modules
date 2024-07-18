@@ -1,44 +1,31 @@
 module Sync_Pulse( //IMPROVE: add parameters
 input CLK,
-output reg H_Sync = 1'b1,
-output reg V_Sync = 1'b1,
-output reg [9:0] CountCol = 0,
-output reg [9:0] CountRow = 0
+output o_HSync, o_VSync,
+output reg [9:0] o_CountCol = 0,
+output reg [9:0] o_CountRow = 0
 );
+
+always @(posedge CLK)
+  begin
+  if (o_CountCol < 799) //target-1
+    o_CountCol <= o_CountCol + 1;
+  else 
+    begin
+    o_CountCol <= 0;
+    if (o_CountRow < 524) 
+      o_CountRow <= o_CountRow + 1; 
+    else
+      o_CountRow <= 0;
+    end
+end
+
+assign o_HSync = (o_CountCol < 640) ? 1'b1 : 1'b0;
+assign o_VSync = (o_CountRow < 480) ? 1'b1 : 1'b0;
+
+endmodule
 
 // 800 Col by 525 Row
 // 640 Col Active, 160 Col H-Sync
 // 480 Row Active, 45 Row V-Sync
 
-// 25Mhz Clock / (800 by 525) Area = 60Hz refresh rate (60 clock cycles per pixel per second)
-
-always @(posedge CLK)
-begin
-  if (CountCol < 639) begin //target-1
-    H_Sync <= 1'b1;
-    CountCol <= CountCol + 1; end
-  else if (CountCol < 799) begin
-    H_Sync <= 1'b0;
-    CountCol <= CountCol + 1; end
-  else 
-  begin
-    CountCol <= 0;
-    H_Sync <= 1'b1;
-    
-    if (CountRow < 479) begin
-      V_Sync <= 1'b1;
-      CountRow <= CountRow + 1; end
-    else if (CountRow < 524) begin 
-      V_Sync <= 1'b0;
-      CountRow <= CountRow + 1; end
-    else begin
-      CountRow <= 0;
-      V_Sync <= 1'b1; end
-  end
-end
-
-//assign H_Sync = 
-
-//IMPROVE: logic above and assignment statements using ?:
-
-endmodule
+// 25 Mhz Clock / (800 by 525) Area = 60 Hz refresh rate (60 clock cycles per pixel per second)
