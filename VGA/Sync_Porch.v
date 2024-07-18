@@ -9,8 +9,8 @@ module Sync_Porch(
   input CLK,
   input i_H_Sync,
   input i_V_Sync,
-  output o_H_Sync = 1'b1, 
-  output o_V_Sync = 1'b1);
+  output reg o_H_Sync = 1'b1, 
+  output reg o_V_Sync = 1'b1);
   
   reg r_H_Sync = 1'b1;
   reg [4:0] r_HCountBP = 0;

@@ -1,26 +1,28 @@
 module Pattern_Generator(
 input CLK,
-input i_H_Sync,
-input i_V_Sync,
 input i_SW1, i_SW2, i_SW3, i_SW4,
-output [2:0] Red = 0,
-output [2:0] Green = 0,
-output [2:0] Blue = 0
+output reg [2:0] Red = 0,
+output reg [2:0] Green = 0,
+output reg [2:0] Blue = 0
 );
 
-wire [9:0] w_CountCol;
-wire [9:0] w_CountRow;
+wire [9:0] w_CountCol = 0;
+wire [9:0] w_CountRow = 0;
+reg [9:0] r_CountCol = 0;
+reg [9:0] r_CountRow = 0;
 
-Sync_Pulse instance(
-.CLK(CLK),
-.H_Sync(i_H_Sync),
-.V_Sync(i_H_Sync),
-.CountCol(w_CountCol),
-.CountRow(w_CountRow)
-);
+Sync_Pulse Inst (
+ .CLK(CLK),
+ .H_Sync(),
+ .V_Sync(),
+ .CountCol(w_CountCol),
+ .CountRow(w_CountRow)
+ );
 
 always @(posedge CLK)
 begin
+  r_CountCol <= w_CountCol;
+  r_CountRow <= w_CountRow;
   if (i_SW1) begin //!,1,A,Q,a,q
     Red <= (w_CountCol < 640 && w_CountRow < 480) ? 3'b111 : 0;
     Green <= 0;
