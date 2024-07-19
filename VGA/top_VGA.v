@@ -16,7 +16,7 @@ output VGA_B0, VGA_B1, VGA_B2
 );
 
 wire w_SW1, w_SW2, w_SW3, w_SW4;
-wire w_HSync, w_VSync, w_HSync_PG, w_VSync_PG, w_HSync_Porch, w_VSync_Porch;
+wire w_HSync, w_VSync, w_HSynch_Porch, w_VSync_Porch, w_HSync_PG, w_VSync_PG;
 wire [9:0] w_CountCol, w_CountRow;
 wire [2:0] w_Red;
 wire [2:0] w_Green;
@@ -47,33 +47,31 @@ Sync_Pulse PulseInst
   .o_CountRow(w_CountRow)
   );
 
+Sync_Porch PorchInst
+ (.CLK(CLK),
+  .i_H_Sync(w_HSync),
+  .i_V_Sync(w_VSync),
+  .o_H_Sync(w_HSync_Porch),
+  .o_V_Sync(w_VSync_Porch)
+  );
+
 Pattern_Generator Pattern_GenInst
  (.CLK(CLK),
   .i_SW1(SW1), 
   .i_SW2(SW2), 
   .i_SW3(SW3), 
   .i_SW4(SW4),
-  .i_HSync(w_HSync),
-  .i_VSync(w_VSync),
-  .o_HSync(w_HSync_PG),
-  .o_VSync(w_VSync_PG),
+  .i_HSync(w_HSync_Porch),
+  .i_VSync(w_VSync_Porch),
+  .o_HSync_PG(w_HSync_PG),
+  .o_VSync_PG(w_VSync_PG),
   .Red(w_Red), 
   .Green(w_Green),
   .Blue(w_Blue)
   );
 
-Sync_Porch PorchInst
- (.CLK(CLK),
-  .i_H_Sync(w_HSync_PG),
-  .i_V_Sync(w_VSync_PG),
-  .o_H_Sync(VGA_HS),
-  .o_V_Sync(VGA_VS)
-  );
-
-//assign r_H_Sync = w_H_Sync;
-
-//assign VGA_HS = w_HSync_Porch;
-//assign VGA_VS = w_VSync_Porch;
+assign VGA_HS = w_HSync_PG;
+assign VGA_VS = w_VSync_PG;
 
 assign VGA_R0 = w_Red[0];
 assign VGA_R1 = w_Red[1];
@@ -87,4 +85,4 @@ assign VGA_B0 = w_Blue[0];
 assign VGA_B1 = w_Blue[1];
 assign VGA_B2 = w_Blue[2];
 
-endmodule;
+endmodule

@@ -57,9 +57,9 @@ module Sync_Porch(
       r_VCountBP <= 0;
       r_VCountPulse <= 0; 
       end
-
-    assign o_H_Sync = r_H_Sync;
-    assign o_V_Sync = r_V_Sync;
-  end
+   end
+   
+  assign o_H_Sync = r_H_Sync;
+  assign o_V_Sync = r_V_Sync;
   
 endmodule
