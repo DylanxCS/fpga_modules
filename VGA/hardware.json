@@ -2198,7 +2198,6 @@
     "SB_CARRY": {
       "attributes": {
         "blackbox": "00000000000000000000000000000001",
-        "cells_not_processed": "00000000000000000000000000000001",
         "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:228.1-260.10"
       },
       "ports": {
@@ -2573,8 +2572,9 @@
     },
     "SB_DFFESS": {
       "attributes": {
-        "abc9_flop": "00000000000000000000000000000001",
         "blackbox": "00000000000000000000000000000001",
+        "abc9_flop": "00000000000000000000000000000001",
+        "cells_not_processed": "00000000000000000000000000000001",
         "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:733.1-791.10"
       },
       "ports": {
@@ -3389,9 +3389,8 @@
     },
     "SB_DFFSR": {
       "attributes": {
-        "blackbox": "00000000000000000000000000000001",
         "abc9_flop": "00000000000000000000000000000001",
-        "cells_not_processed": "00000000000000000000000000000001",
+        "blackbox": "00000000000000000000000000000001",
         "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:350.1-397.10"
       },
       "ports": {
@@ -9642,7 +9641,7 @@
       "attributes": {
         "hdlname": "\\top_VGA",
         "top": "00000000000000000000000000000001",
-        "src": "top_VGA.v:9.1-88.10"
+        "src": "top_VGA.v:9.1-90.10"
       },
       "ports": {
         "CLK": {
@@ -9671,67 +9670,1740 @@
         },
         "VGA_VS": {
           "direction": "output",
-          "bits": [ 7 ]
+          "bits": [ 8 ]
         },
         "VGA_R0": {
           "direction": "output",
-          "bits": [ 8 ]
+          "bits": [ 9 ]
         },
         "VGA_R1": {
           "direction": "output",
-          "bits": [ 8 ]
+          "bits": [ 9 ]
         },
         "VGA_R2": {
           "direction": "output",
-          "bits": [ 8 ]
+          "bits": [ 9 ]
         },
         "VGA_G0": {
           "direction": "output",
-          "bits": [ 9 ]
+          "bits": [ 10 ]
         },
         "VGA_G1": {
           "direction": "output",
-          "bits": [ 9 ]
+          "bits": [ 10 ]
         },
         "VGA_G2": {
           "direction": "output",
-          "bits": [ 9 ]
+          "bits": [ 10 ]
         },
         "VGA_B0": {
           "direction": "output",
-          "bits": [ 10 ]
+          "bits": [ 11 ]
         },
         "VGA_B1": {
           "direction": "output",
-          "bits": [ 10 ]
+          "bits": [ 11 ]
         },
         "VGA_B2": {
           "direction": "output",
-          "bits": [ 10 ]
+          "bits": [ 11 ]
         }
       },
       "cells": {
-        "Pattern_GenInst.o_HSync_PG_SB_DFF_Q": {
+        "PulseInst.o_CountCol_SB_DFFSR_Q": {
           "hide_name": 0,
-          "type": "SB_DFF",
+          "type": "SB_DFFSR",
           "parameters": {
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:13.1-33.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:2.51-2.90"
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
           },
           "port_directions": {
             "C": "input",
             "D": "input",
-            "Q": "output"
+            "Q": "output",
+            "R": "input"
           },
           "connections": {
             "C": [ 2 ],
-            "D": [ "1" ],
-            "Q": [ 7 ]
+            "D": [ 12 ],
+            "Q": [ 13 ],
+            "R": [ 14 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_1": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 15 ],
+            "Q": [ 16 ],
+            "R": [ 14 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_2": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 17 ],
+            "Q": [ 18 ],
+            "R": [ 14 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_3": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 19 ],
+            "Q": [ 20 ],
+            "R": [ 14 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_4": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 21 ],
+            "Q": [ 22 ],
+            "R": [ 14 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_5": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 23 ],
+            "Q": [ 24 ],
+            "R": [ 14 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_6": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 25 ],
+            "Q": [ 26 ],
+            "R": [ 14 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_7": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 27 ],
+            "Q": [ 28 ],
+            "R": [ 14 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_8": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 29 ],
+            "Q": [ 30 ],
+            "R": [ 14 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_9": {
+          "hide_name": 0,
+          "type": "SB_DFFSR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:19.59-19.105"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 31 ],
+            "Q": [ 32 ],
+            "R": [ 14 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 13 ],
+            "I3": [ 33 ],
+            "O": [ 12 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 16 ],
+            "I3": [ 34 ],
+            "O": [ 15 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 18 ],
+            "I3": [ 35 ],
+            "O": [ 17 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 20 ],
+            "I3": [ 36 ],
+            "O": [ 19 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_4": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 22 ],
+            "I3": [ 37 ],
+            "O": [ 21 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_5": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 24 ],
+            "I3": [ 38 ],
+            "O": [ 23 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_6": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 26 ],
+            "I3": [ 39 ],
+            "O": [ 25 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_7": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 28 ],
+            "I3": [ 40 ],
+            "O": [ 27 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_8": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 30 ],
+            "I3": [ 32 ],
+            "O": [ 29 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_9": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 32 ],
+            "O": [ 31 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 34 ],
+            "CO": [ 33 ],
+            "I0": [ "0" ],
+            "I1": [ 16 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_1": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 35 ],
+            "CO": [ 34 ],
+            "I0": [ "0" ],
+            "I1": [ 18 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_2": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 36 ],
+            "CO": [ 35 ],
+            "I0": [ "0" ],
+            "I1": [ 20 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_3": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 37 ],
+            "CO": [ 36 ],
+            "I0": [ "0" ],
+            "I1": [ 22 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_4": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 38 ],
+            "CO": [ 37 ],
+            "I0": [ "0" ],
+            "I1": [ 24 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_5": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 39 ],
+            "CO": [ 38 ],
+            "I0": [ "0" ],
+            "I1": [ 26 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_6": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 40 ],
+            "CO": [ 39 ],
+            "I0": [ "0" ],
+            "I1": [ 28 ]
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_7": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 32 ],
+            "CO": [ 40 ],
+            "I0": [ "0" ],
+            "I1": [ 30 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 41 ],
+            "E": [ 14 ],
+            "Q": [ 42 ],
+            "R": [ 43 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_1": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 44 ],
+            "E": [ 14 ],
+            "Q": [ 45 ],
+            "R": [ 43 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_2": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 46 ],
+            "E": [ 14 ],
+            "Q": [ 47 ],
+            "R": [ 43 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_3": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 48 ],
+            "E": [ 14 ],
+            "Q": [ 49 ],
+            "R": [ 43 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_4": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 50 ],
+            "E": [ 14 ],
+            "Q": [ 51 ],
+            "R": [ 43 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_5": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 52 ],
+            "E": [ 14 ],
+            "Q": [ 53 ],
+            "R": [ 43 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_6": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 54 ],
+            "E": [ 14 ],
+            "Q": [ 55 ],
+            "R": [ 43 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_7": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 56 ],
+            "E": [ 14 ],
+            "Q": [ 57 ],
+            "R": [ 43 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_8": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 58 ],
+            "E": [ 14 ],
+            "Q": [ 59 ],
+            "R": [ 43 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_9": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:8.1-20.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output",
+            "R": "input"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 60 ],
+            "E": [ 14 ],
+            "Q": [ 61 ],
+            "R": [ 43 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_9_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 45 ],
+            "O": [ 62 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_9_D_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 49 ],
+            "O": [ 63 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_9_D_SB_LUT4_O_2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 51 ],
+            "O": [ 64 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_9_D_SB_LUT4_O_3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 42 ],
+            "O": [ 65 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_9_D_SB_LUT4_O_4": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 53 ],
+            "O": [ 66 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_9_D_SB_LUT4_O_5": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 55 ],
+            "O": [ 67 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_9_D_SB_LUT4_O_6": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 59 ],
+            "O": [ 68 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_9_D_SB_LUT4_O_7": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 57 ],
+            "O": [ 69 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_9_D_SB_LUT4_O_8": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 61 ],
+            "O": [ 60 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_9_D_SB_LUT4_O_9": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 47 ],
+            "O": [ 70 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 42 ],
+            "I3": [ 71 ],
+            "O": [ 41 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 45 ],
+            "I3": [ 72 ],
+            "O": [ 44 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 47 ],
+            "I3": [ 73 ],
+            "O": [ 46 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 49 ],
+            "I3": [ 74 ],
+            "O": [ 48 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_4": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 51 ],
+            "I3": [ 75 ],
+            "O": [ 50 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_5": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 53 ],
+            "I3": [ 76 ],
+            "O": [ 52 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_6": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 55 ],
+            "I3": [ 77 ],
+            "O": [ 54 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_7": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 57 ],
+            "I3": [ 78 ],
+            "O": [ 56 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_8": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0110100110010110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 59 ],
+            "I3": [ 61 ],
+            "O": [ 58 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 72 ],
+            "CO": [ 71 ],
+            "I0": [ "0" ],
+            "I1": [ 45 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_1": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 73 ],
+            "CO": [ 72 ],
+            "I0": [ "0" ],
+            "I1": [ 47 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_2": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 74 ],
+            "CO": [ 73 ],
+            "I0": [ "0" ],
+            "I1": [ 49 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_3": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 75 ],
+            "CO": [ 74 ],
+            "I0": [ "0" ],
+            "I1": [ 51 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_4": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 76 ],
+            "CO": [ 75 ],
+            "I0": [ "0" ],
+            "I1": [ 53 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_5": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 77 ],
+            "CO": [ 76 ],
+            "I0": [ "0" ],
+            "I1": [ 55 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_6": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 78 ],
+            "CO": [ 77 ],
+            "I0": [ "0" ],
+            "I1": [ 57 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_I3_SB_CARRY_CO_7": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 61 ],
+            "CO": [ 78 ],
+            "I0": [ "0" ],
+            "I1": [ 59 ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_R_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:15.9-15.25|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 79 ],
+            "CO": [ 43 ],
+            "I0": [ 42 ],
+            "I1": [ "0" ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_R_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:15.9-15.25|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 80 ],
+            "CO": [ 79 ],
+            "I0": [ 45 ],
+            "I1": [ "1" ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_R_SB_CARRY_CO_CI_SB_CARRY_CO_1": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:15.9-15.25|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 81 ],
+            "CO": [ 80 ],
+            "I0": [ 47 ],
+            "I1": [ "1" ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_R_SB_CARRY_CO_CI_SB_CARRY_CO_2": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:15.9-15.25|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 82 ],
+            "CO": [ 81 ],
+            "I0": [ 49 ],
+            "I1": [ "1" ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_R_SB_CARRY_CO_CI_SB_CARRY_CO_3": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:15.9-15.25|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 83 ],
+            "CO": [ 82 ],
+            "I0": [ 51 ],
+            "I1": [ "1" ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_R_SB_CARRY_CO_CI_SB_CARRY_CO_4": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:15.9-15.25|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 84 ],
+            "CO": [ 83 ],
+            "I0": [ 53 ],
+            "I1": [ "1" ]
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_R_SB_CARRY_CO_CI_SB_CARRY_CO_5": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:15.9-15.25|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 57 ],
+            "CO": [ 84 ],
+            "I0": [ 55 ],
+            "I1": [ "0" ]
           }
         },
         "SW2_SB_LUT4_I3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1111000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 85 ],
+            "I3": [ 4 ],
+            "O": [ 86 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_1": {
           "hide_name": 0,
           "type": "SB_LUT4",
           "parameters": {
@@ -9753,18 +11425,1526 @@
             "I1": [ "0" ],
             "I2": [ 3 ],
             "I3": [ 4 ],
-            "O": [ 11 ]
+            "O": [ 87 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1011000010111011"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 88 ],
+            "I1": [ 89 ],
+            "I2": [ 90 ],
+            "I3": [ 91 ],
+            "O": [ 85 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1111000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 92 ],
+            "I3": [ 93 ],
+            "O": [ 89 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0111111100000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 94 ],
+            "I1": [ 95 ],
+            "I2": [ 96 ],
+            "I3": [ 97 ],
+            "O": [ 88 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1100000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 94 ],
+            "I2": [ 98 ],
+            "I3": [ 99 ],
+            "O": [ 14 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I2_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0001000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 20 ],
+            "I1": [ 18 ],
+            "I2": [ 100 ],
+            "I3": [ 24 ],
+            "O": [ 98 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I2_SB_LUT4_O_I2_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0100000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 22 ],
+            "I1": [ 16 ],
+            "I2": [ 32 ],
+            "I3": [ 30 ],
+            "O": [ 100 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:10.7-10.23|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 101 ],
+            "CO": [ 99 ],
+            "I0": [ "1" ],
+            "I1": [ 102 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:10.7-10.23|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 103 ],
+            "CO": [ 101 ],
+            "I0": [ "1" ],
+            "I1": [ 104 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_1": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:10.7-10.23|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 105 ],
+            "CO": [ 103 ],
+            "I0": [ "0" ],
+            "I1": [ 106 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_2": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:10.7-10.23|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 107 ],
+            "CO": [ 105 ],
+            "I0": [ "0" ],
+            "I1": [ 108 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 16 ],
+            "O": [ 104 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I3_SB_CARRY_CO_I1_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 13 ],
+            "O": [ 102 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I3_SB_CARRY_CO_I1_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 18 ],
+            "O": [ 106 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I3_SB_CARRY_CO_I1_SB_LUT4_O_2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 20 ],
+            "O": [ 108 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I3_SB_CARRY_CO_I1_SB_LUT4_O_3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 22 ],
+            "O": [ 107 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0001000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 16 ],
+            "I1": [ 30 ],
+            "I2": [ 32 ],
+            "I3": [ 22 ],
+            "O": [ 96 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0011000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 24 ],
+            "I2": [ 20 ],
+            "I3": [ 18 ],
+            "O": [ 95 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_O_2": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1100000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:22.34-23.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ 13 ],
+            "I2": [ 28 ],
+            "I3": [ 26 ],
+            "O": [ 94 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.45-18.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 109 ],
+            "CO": [ 97 ],
+            "I0": [ 13 ],
+            "I1": [ "0" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.45-18.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 110 ],
+            "CO": [ 109 ],
+            "I0": [ 16 ],
+            "I1": [ "1" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_1": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.45-18.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 111 ],
+            "CO": [ 110 ],
+            "I0": [ 18 ],
+            "I1": [ "0" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_2": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.45-18.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 112 ],
+            "CO": [ 111 ],
+            "I0": [ 20 ],
+            "I1": [ "0" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_3": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.45-18.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 113 ],
+            "CO": [ 112 ],
+            "I0": [ 22 ],
+            "I1": [ "0" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_4": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.45-18.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 114 ],
+            "CO": [ 113 ],
+            "I0": [ 24 ],
+            "I1": [ "1" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_5": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.45-18.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 115 ],
+            "CO": [ 114 ],
+            "I0": [ 26 ],
+            "I1": [ "0" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_6": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.45-18.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 116 ],
+            "CO": [ 115 ],
+            "I0": [ 28 ],
+            "I1": [ "0" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_7": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.45-18.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 32 ],
+            "CO": [ 116 ],
+            "I0": [ 30 ],
+            "I1": [ "1" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:22.19-22.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 117 ],
+            "CO": [ 92 ],
+            "I0": [ 13 ],
+            "I1": [ "0" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:22.19-22.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 18 ],
+            "CO": [ 117 ],
+            "I0": [ 16 ],
+            "I1": [ "1" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.22-18.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 118 ],
+            "CO": [ 93 ],
+            "I0": [ 13 ],
+            "I1": [ "0" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.22-18.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 119 ],
+            "CO": [ 118 ],
+            "I0": [ 16 ],
+            "I1": [ "1" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_1": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.22-18.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 120 ],
+            "CO": [ 119 ],
+            "I0": [ 18 ],
+            "I1": [ "0" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_2": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.22-18.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 121 ],
+            "CO": [ 120 ],
+            "I0": [ 20 ],
+            "I1": [ "1" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_3": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.22-18.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 122 ],
+            "CO": [ 121 ],
+            "I0": [ 22 ],
+            "I1": [ "1" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_4": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.22-18.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 123 ],
+            "CO": [ 122 ],
+            "I0": [ 24 ],
+            "I1": [ "0" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_5": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.22-18.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 124 ],
+            "CO": [ 123 ],
+            "I0": [ 26 ],
+            "I1": [ "1" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_6": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.22-18.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 30 ],
+            "CO": [ 124 ],
+            "I0": [ 28 ],
+            "I1": [ "1" ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1111000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 125 ],
+            "I3": [ 126 ],
+            "O": [ 91 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000111011101110"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 127 ],
+            "I1": [ 128 ],
+            "I2": [ 129 ],
+            "I3": [ 130 ],
+            "O": [ 90 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I0_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.22-19.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 131 ],
+            "CO": [ 127 ],
+            "I0": [ "0" ],
+            "I1": [ 65 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I0_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.22-19.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 132 ],
+            "CO": [ 131 ],
+            "I0": [ "1" ],
+            "I1": [ 62 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I0_SB_CARRY_CO_CI_SB_CARRY_CO_1": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.22-19.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 133 ],
+            "CO": [ 132 ],
+            "I0": [ "1" ],
+            "I1": [ 70 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I0_SB_CARRY_CO_CI_SB_CARRY_CO_2": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.22-19.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 134 ],
+            "CO": [ 133 ],
+            "I0": [ "1" ],
+            "I1": [ 63 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I0_SB_CARRY_CO_CI_SB_CARRY_CO_3": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.22-19.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 135 ],
+            "CO": [ 134 ],
+            "I0": [ "1" ],
+            "I1": [ 64 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I0_SB_CARRY_CO_CI_SB_CARRY_CO_4": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.22-19.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 136 ],
+            "CO": [ 135 ],
+            "I0": [ "0" ],
+            "I1": [ 66 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I0_SB_CARRY_CO_CI_SB_CARRY_CO_5": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.22-19.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 137 ],
+            "CO": [ 136 ],
+            "I0": [ "1" ],
+            "I1": [ 67 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I0_SB_CARRY_CO_CI_SB_CARRY_CO_6": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.22-19.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 138 ],
+            "CO": [ 137 ],
+            "I0": [ "0" ],
+            "I1": [ 69 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I0_SB_CARRY_CO_CI_SB_CARRY_CO_7": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.22-19.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 60 ],
+            "CO": [ 138 ],
+            "I0": [ "1" ],
+            "I1": [ 68 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I1_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:23.19-23.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 139 ],
+            "CO": [ 128 ],
+            "I0": [ "0" ],
+            "I1": [ 65 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I1_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:23.19-23.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 140 ],
+            "CO": [ 139 ],
+            "I0": [ "1" ],
+            "I1": [ 62 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I1_SB_CARRY_CO_CI_SB_CARRY_CO_1": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:23.19-23.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 141 ],
+            "CO": [ 140 ],
+            "I0": [ "1" ],
+            "I1": [ 70 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I1_SB_CARRY_CO_CI_SB_CARRY_CO_2": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:23.19-23.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 142 ],
+            "CO": [ 141 ],
+            "I0": [ "1" ],
+            "I1": [ 63 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I1_SB_CARRY_CO_CI_SB_CARRY_CO_3": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:23.19-23.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 143 ],
+            "CO": [ 142 ],
+            "I0": [ "1" ],
+            "I1": [ 64 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I1_SB_CARRY_CO_CI_SB_CARRY_CO_4": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:23.19-23.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 144 ],
+            "CO": [ 143 ],
+            "I0": [ "0" ],
+            "I1": [ 66 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I1_SB_CARRY_CO_CI_SB_CARRY_CO_5": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:23.19-23.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 145 ],
+            "CO": [ 144 ],
+            "I0": [ "0" ],
+            "I1": [ 67 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I1_SB_CARRY_CO_CI_SB_CARRY_CO_6": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:23.19-23.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 146 ],
+            "CO": [ 145 ],
+            "I0": [ "0" ],
+            "I1": [ 69 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I1_SB_CARRY_CO_CI_SB_CARRY_CO_7": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:23.19-23.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 60 ],
+            "CO": [ 146 ],
+            "I0": [ "0" ],
+            "I1": [ 68 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I2_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1000000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 47 ],
+            "I1": [ 51 ],
+            "I2": [ 49 ],
+            "I3": [ 45 ],
+            "O": [ 130 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I2_SB_LUT4_O_1": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000000000001"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 61 ],
+            "I1": [ 57 ],
+            "I2": [ 53 ],
+            "I3": [ 42 ],
+            "O": [ 129 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0101000100010011"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ 128 ],
+            "I1": [ 127 ],
+            "I2": [ 55 ],
+            "I3": [ 59 ],
+            "O": [ 125 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.45-19.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 147 ],
+            "CO": [ 126 ],
+            "I0": [ "0" ],
+            "I1": [ 65 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.45-19.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 148 ],
+            "CO": [ 147 ],
+            "I0": [ "1" ],
+            "I1": [ 62 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_1": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.45-19.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 149 ],
+            "CO": [ 148 ],
+            "I0": [ "1" ],
+            "I1": [ 70 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_2": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.45-19.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 150 ],
+            "CO": [ 149 ],
+            "I0": [ "1" ],
+            "I1": [ 63 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_3": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.45-19.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 151 ],
+            "CO": [ 150 ],
+            "I0": [ "1" ],
+            "I1": [ 64 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_4": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.45-19.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 152 ],
+            "CO": [ 151 ],
+            "I0": [ "0" ],
+            "I1": [ 66 ]
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_5": {
+          "hide_name": 0,
+          "type": "SB_CARRY",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.45-19.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4"
+          },
+          "port_directions": {
+            "CI": "input",
+            "CO": "output",
+            "I0": "input",
+            "I1": "input"
+          },
+          "connections": {
+            "CI": [ 69 ],
+            "CO": [ 152 ],
+            "I0": [ "1" ],
+            "I1": [ 67 ]
+          }
+        },
+        "SW3_SB_LUT4_I3": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "1111000000000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 85 ],
+            "I3": [ 5 ],
+            "O": [ 153 ]
           }
         },
         "SW4_SB_LUT4_I3": {
           "hide_name": 0,
           "type": "SB_LUT4",
           "parameters": {
-            "LUT_INIT": "1111111111111110"
+            "LUT_INIT": "1111111111111100"
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:22.34-23.52"
           },
           "port_directions": {
             "I0": "input",
@@ -9774,36 +12954,11 @@
             "O": "output"
           },
           "connections": {
-            "I0": [ 3 ],
-            "I1": [ 4 ],
+            "I0": [ "0" ],
+            "I1": [ 87 ],
             "I2": [ 5 ],
             "I3": [ 6 ],
-            "O": [ 12 ]
-          }
-        },
-        "SW4_SB_LUT4_I3_1": {
-          "hide_name": 0,
-          "type": "SB_LUT4",
-          "parameters": {
-            "LUT_INIT": "1111111111111110"
-          },
-          "attributes": {
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:26.33-27.52"
-          },
-          "port_directions": {
-            "I0": "input",
-            "I1": "input",
-            "I2": "input",
-            "I3": "input",
-            "O": "output"
-          },
-          "connections": {
-            "I0": [ 3 ],
-            "I1": [ 4 ],
-            "I2": [ 5 ],
-            "I3": [ 6 ],
-            "O": [ 13 ]
+            "O": [ 154 ]
           }
         },
         "VGA_B0_SB_DFFESR_Q": {
@@ -9813,7 +12968,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:13.1-33.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:13.1-33.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -9824,10 +12979,10 @@
           },
           "connections": {
             "C": [ 2 ],
-            "D": [ 5 ],
-            "E": [ 13 ],
-            "Q": [ 10 ],
-            "R": [ 11 ]
+            "D": [ 153 ],
+            "E": [ 154 ],
+            "Q": [ 11 ],
+            "R": [ 87 ]
           }
         },
         "VGA_G0_SB_DFFESR_Q": {
@@ -9837,7 +12992,7 @@
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:13.1-33.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:13.1-33.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
@@ -9848,34 +13003,199 @@
           },
           "connections": {
             "C": [ 2 ],
-            "D": [ 4 ],
-            "E": [ 12 ],
-            "Q": [ 9 ],
+            "D": [ 86 ],
+            "E": [ 154 ],
+            "Q": [ 10 ],
             "R": [ 3 ]
           }
         },
-        "VGA_R0_SB_DFFESS_Q": {
+        "VGA_HS_SB_LUT4_O": {
           "hide_name": 0,
-          "type": "SB_DFFESS",
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 155 ],
+            "O": [ 7 ]
+          }
+        },
+        "VGA_HS_SB_LUT4_O_I3_SB_DFF_Q": {
+          "hide_name": 0,
+          "type": "SB_DFF",
           "parameters": {
           },
           "attributes": {
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:13.1-33.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:25.66-25.119"
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:13.1-33.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:2.51-2.90"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 156 ],
+            "Q": [ 155 ]
+          }
+        },
+        "VGA_HS_SB_LUT4_O_I3_SB_DFF_Q_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000111100000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 88 ],
+            "I3": [ 89 ],
+            "O": [ 156 ]
+          }
+        },
+        "VGA_R0_SB_DFFESR_Q": {
+          "hide_name": 0,
+          "type": "SB_DFFESR",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:13.1-33.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:24.66-24.119"
           },
           "port_directions": {
             "C": "input",
             "D": "input",
             "E": "input",
             "Q": "output",
-            "S": "input"
+            "R": "input"
           },
           "connections": {
             "C": [ 2 ],
-            "D": [ "0" ],
-            "E": [ 12 ],
-            "Q": [ 8 ],
-            "S": [ 3 ]
+            "D": [ 85 ],
+            "E": [ 154 ],
+            "Q": [ 9 ],
+            "R": [ 157 ]
+          }
+        },
+        "VGA_R0_SB_DFFESR_Q_R_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 3 ],
+            "O": [ 157 ]
+          }
+        },
+        "VGA_VS_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000000011111111"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:12.34-13.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ "0" ],
+            "I3": [ 158 ],
+            "O": [ 8 ]
+          }
+        },
+        "VGA_VS_SB_LUT4_O_I3_SB_DFF_Q": {
+          "hide_name": 0,
+          "type": "SB_DFF",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:13.1-33.4|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:2.51-2.90"
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 159 ],
+            "Q": [ 158 ]
+          }
+        },
+        "VGA_VS_SB_LUT4_O_I3_SB_DFF_Q_D_SB_LUT4_O": {
+          "hide_name": 0,
+          "type": "SB_LUT4",
+          "parameters": {
+            "LUT_INIT": "0000111100000000"
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:17.34-18.52"
+          },
+          "port_directions": {
+            "I0": "input",
+            "I1": "input",
+            "I2": "input",
+            "I3": "input",
+            "O": "output"
+          },
+          "connections": {
+            "I0": [ "0" ],
+            "I1": [ "0" ],
+            "I2": [ 90 ],
+            "I3": [ 91 ],
+            "O": [ 159 ]
           }
         }
       },
@@ -9889,10 +13209,10 @@
         },
         "Pattern_GenInst.Blue": {
           "hide_name": 0,
-          "bits": [ 10, 10, 10 ],
+          "bits": [ 11, 11, 11 ],
           "attributes": {
             "hdlname": "Pattern_GenInst Blue",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:10.18-10.22"
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:10.18-10.22"
           }
         },
         "Pattern_GenInst.CLK": {
@@ -9900,31 +13220,23 @@
           "bits": [ 2 ],
           "attributes": {
             "hdlname": "Pattern_GenInst CLK",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:2.7-2.10"
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:2.7-2.10"
           }
         },
         "Pattern_GenInst.Green": {
           "hide_name": 0,
-          "bits": [ 9, 9, 9 ],
+          "bits": [ 10, 10, 10 ],
           "attributes": {
             "hdlname": "Pattern_GenInst Green",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:9.18-9.23"
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:9.18-9.23"
           }
         },
         "Pattern_GenInst.Red": {
           "hide_name": 0,
-          "bits": [ 8, 8, 8 ],
+          "bits": [ 9, 9, 9 ],
           "attributes": {
             "hdlname": "Pattern_GenInst Red",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:8.18-8.21"
-          }
-        },
-        "Pattern_GenInst.i_HSync": {
-          "hide_name": 0,
-          "bits": [ "1" ],
-          "attributes": {
-            "hdlname": "Pattern_GenInst i_HSync",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:4.7-4.14"
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:8.18-8.21"
           }
         },
         "Pattern_GenInst.i_SW1": {
@@ -9932,7 +13244,7 @@
           "bits": [ 3 ],
           "attributes": {
             "hdlname": "Pattern_GenInst i_SW1",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:3.7-3.12"
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:3.7-3.12"
           }
         },
         "Pattern_GenInst.i_SW2": {
@@ -9940,7 +13252,7 @@
           "bits": [ 4 ],
           "attributes": {
             "hdlname": "Pattern_GenInst i_SW2",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:3.14-3.19"
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:3.14-3.19"
           }
         },
         "Pattern_GenInst.i_SW3": {
@@ -9948,7 +13260,7 @@
           "bits": [ 5 ],
           "attributes": {
             "hdlname": "Pattern_GenInst i_SW3",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:3.21-3.26"
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:3.21-3.26"
           }
         },
         "Pattern_GenInst.i_SW4": {
@@ -9956,15 +13268,7 @@
           "bits": [ 6 ],
           "attributes": {
             "hdlname": "Pattern_GenInst i_SW4",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:3.28-3.33"
-          }
-        },
-        "Pattern_GenInst.i_VSync": {
-          "hide_name": 0,
-          "bits": [ "1" ],
-          "attributes": {
-            "hdlname": "Pattern_GenInst i_VSync",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:5.7-5.14"
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:3.28-3.33"
           }
         },
         "Pattern_GenInst.o_HSync_PG": {
@@ -9972,15 +13276,15 @@
           "bits": [ 7 ],
           "attributes": {
             "hdlname": "Pattern_GenInst o_HSync_PG",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:6.12-6.22"
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:6.12-6.22"
           }
         },
         "Pattern_GenInst.o_VSync_PG": {
           "hide_name": 0,
-          "bits": [ 7 ],
+          "bits": [ 8 ],
           "attributes": {
             "hdlname": "Pattern_GenInst o_VSync_PG",
-            "src": "top_VGA.v:58.19-71.4|Pattern_Generator.v:7.12-7.22"
+            "src": "top_VGA.v:60.19-73.4|Pattern_Generator.v:7.12-7.22"
           }
         },
         "PorchInst.CLK": {
@@ -9988,39 +13292,23 @@
           "bits": [ 2 ],
           "attributes": {
             "hdlname": "PorchInst CLK",
-            "src": "top_VGA.v:50.12-56.4|Sync_Porch.v:9.9-9.12"
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:10.9-10.12"
           }
         },
-        "PorchInst.o_H_Sync": {
+        "PorchInst.i_CountCol": {
           "hide_name": 0,
-          "bits": [ "1" ],
+          "bits": [ 32, 30, 28, 26, 24, 22, 20, 18, 16, 13 ],
           "attributes": {
-            "hdlname": "PorchInst o_H_Sync",
-            "src": "top_VGA.v:50.12-56.4|Sync_Porch.v:12.14-12.22"
+            "hdlname": "PorchInst i_CountCol",
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:13.15-13.25"
           }
         },
-        "PorchInst.o_V_Sync": {
+        "PorchInst.i_CountRow": {
           "hide_name": 0,
-          "bits": [ "1" ],
+          "bits": [ 61, 59, 57, 55, 53, 51, 49, 47, 45, 42 ],
           "attributes": {
-            "hdlname": "PorchInst o_V_Sync",
-            "src": "top_VGA.v:50.12-56.4|Sync_Porch.v:13.14-13.22"
-          }
-        },
-        "PorchInst.r_H_Sync": {
-          "hide_name": 0,
-          "bits": [ "1" ],
-          "attributes": {
-            "hdlname": "PorchInst r_H_Sync",
-            "src": "top_VGA.v:50.12-56.4|Sync_Porch.v:15.7-15.15"
-          }
-        },
-        "PorchInst.r_V_Sync": {
-          "hide_name": 0,
-          "bits": [ "1" ],
-          "attributes": {
-            "hdlname": "PorchInst r_V_Sync",
-            "src": "top_VGA.v:50.12-56.4|Sync_Porch.v:19.7-19.15"
+            "hdlname": "PorchInst i_CountRow",
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:14.15-14.25"
           }
         },
         "PulseInst.CLK": {
@@ -10029,6 +13317,78 @@
           "attributes": {
             "hdlname": "PulseInst CLK",
             "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:2.7-2.10"
+          }
+        },
+        "PulseInst.o_CountCol": {
+          "hide_name": 0,
+          "bits": [ 32, 30, 28, 26, 24, 22, 20, 18, 16, 13 ],
+          "attributes": {
+            "hdlname": "PulseInst o_CountCol",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:4.18-4.28"
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D": {
+          "hide_name": 0,
+          "bits": [ 31, 29, 27, 25, 23, 21, 19, 17, 15, 12 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:33.26-33.27"
+          }
+        },
+        "PulseInst.o_CountCol_SB_DFFSR_Q_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ "0", 32, 40, 39, 38, 37, 36, 35, 34, 33 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:11.19-11.33|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22"
+          }
+        },
+        "PulseInst.o_CountRow": {
+          "hide_name": 0,
+          "bits": [ 61, 59, 57, 55, 53, 51, 49, 47, 45, 42 ],
+          "attributes": {
+            "hdlname": "PulseInst o_CountRow",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:5.18-5.28"
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_9_D": {
+          "hide_name": 0,
+          "bits": [ 60, 68, 69, 67, 66, 64, 63, 70, 62, 65 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:23.19-23.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:49.21-49.23"
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D": {
+          "hide_name": 0,
+          "bits": [ 60, 58, 56, 54, 52, 50, 48, 46, 44, 41 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:33.26-33.27"
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_D_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ "0", 61, 78, 77, 76, 75, 74, 73, 72, 71 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:16.21-16.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22"
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_R": {
+          "hide_name": 0,
+          "bits": [ 57, 84, 83, 82, 81, 80, 79, 43 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:15.9-15.25|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:37.23-37.25"
+          }
+        },
+        "PulseInst.o_CountRow_SB_DFFESR_Q_R_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ "1", 57, 84, 83, 82, 81, 80, 79 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:15.9-15.25|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22"
           }
         },
         "SW1": {
@@ -10045,6 +13405,212 @@
             "src": "top_VGA.v:11.12-11.15"
           }
         },
+        "SW2_SB_LUT4_I3_1_O": {
+          "hide_name": 0,
+          "bits": [ 87, 5, 6 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2": {
+          "hide_name": 0,
+          "bits": [ 85, 5 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0": {
+          "hide_name": 0,
+          "bits": [ 88, 89 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0": {
+          "hide_name": 0,
+          "bits": [ 94, 95, 96, 97 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I2": {
+          "hide_name": 0,
+          "bits": [ 94, 98, 99 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I2_SB_LUT4_O_I2": {
+          "hide_name": 0,
+          "bits": [ 20, 18, 100, 24 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I3": {
+          "hide_name": 0,
+          "bits": [ 107, 105, 103, 101, 99 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:10.7-10.23|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:37.23-37.25"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I3_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ "1", 107, 105, 103, 101 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:10.7-10.23|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_I1": {
+          "hide_name": 0,
+          "bits": [ 18, 104, 13 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:22.19-22.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:33.23-33.24"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_I3_SB_CARRY_CO_I1": {
+          "hide_name": 0,
+          "bits": [ 107, 108, 106, 104, 102 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:10.7-10.23|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:49.21-49.23"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I0_SB_LUT4_I1_O": {
+          "hide_name": 0,
+          "bits": [ 14 ],
+          "attributes": {
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I3": {
+          "hide_name": 0,
+          "bits": [ 32, 116, 115, 114, 113, 112, 111, 110, 109, 97 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.45-18.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:37.23-37.25"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_1_I3_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ "1", 32, 116, 115, 114, 113, 112, 111, 110, 109 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.45-18.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I2": {
+          "hide_name": 0,
+          "bits": [ 18, 117, 92 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:22.19-22.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:37.23-37.25"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I2_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ "1", 18, 117 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:22.19-22.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 30, 124, 123, 122, 121, 120, 119, 118, 93 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.22-18.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:37.23-37.25"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ "1", 30, 124, 123, 122, 121, 120, 119, 118 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:18.22-18.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2": {
+          "hide_name": 0,
+          "bits": [ 88, 89, 90, 91 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I0": {
+          "hide_name": 0,
+          "bits": [ 60, 138, 137, 136, 135, 134, 133, 132, 131, 127 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.22-19.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:37.23-37.25"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I0_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ "1", 60, 138, 137, 136, 135, 134, 133, 132, 131 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.22-19.41|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I1": {
+          "hide_name": 0,
+          "bits": [ 60, 146, 145, 144, 143, 142, 141, 140, 139, 128 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:23.19-23.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:37.23-37.25"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I1_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ "1", 60, 146, 145, 144, 143, 142, 141, 140, 139 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:42.12-48.4|Sync_Pulse.v:23.19-23.35|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_1_I2": {
+          "hide_name": 0,
+          "bits": [ 127, 128, 129, 130 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_I2": {
+          "hide_name": 0,
+          "bits": [ 125, 126 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 69, 152, 151, 150, 149, 148, 147, 126 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.45-19.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:37.23-37.25"
+          }
+        },
+        "SW2_SB_LUT4_I3_I2_SB_LUT4_O_I2_SB_LUT4_O_I3_SB_CARRY_CO_CI": {
+          "hide_name": 0,
+          "bits": [ "1", 69, 152, 151, 150, 149, 148, 147 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "top_VGA.v:50.12-58.4|Sync_Porch.v:19.45-19.66|/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:51.21-51.22"
+          }
+        },
         "SW3": {
           "hide_name": 0,
           "bits": [ 5 ],
@@ -10059,56 +13625,62 @@
             "src": "top_VGA.v:11.22-11.25"
           }
         },
+        "SW4_SB_LUT4_I3_O": {
+          "hide_name": 0,
+          "bits": [ 154 ],
+          "attributes": {
+          }
+        },
         "VGA_B0": {
           "hide_name": 0,
-          "bits": [ 10 ],
+          "bits": [ 11 ],
           "attributes": {
             "src": "top_VGA.v:15.8-15.14"
           }
         },
-        "VGA_B0_SB_DFFESR_Q_E": {
+        "VGA_B0_SB_DFFESR_Q_D": {
           "hide_name": 0,
-          "bits": [ 13 ],
-          "attributes": {
-          }
-        },
-        "VGA_B0_SB_DFFESR_Q_R": {
-          "hide_name": 0,
-          "bits": [ 11 ],
+          "bits": [ 153 ],
           "attributes": {
           }
         },
         "VGA_B1": {
           "hide_name": 0,
-          "bits": [ 10 ],
+          "bits": [ 11 ],
           "attributes": {
             "src": "top_VGA.v:15.16-15.22"
           }
         },
         "VGA_B2": {
           "hide_name": 0,
-          "bits": [ 10 ],
+          "bits": [ 11 ],
           "attributes": {
             "src": "top_VGA.v:15.24-15.30"
           }
         },
         "VGA_G0": {
           "hide_name": 0,
-          "bits": [ 9 ],
+          "bits": [ 10 ],
           "attributes": {
             "src": "top_VGA.v:14.8-14.14"
           }
         },
+        "VGA_G0_SB_DFFESR_Q_D": {
+          "hide_name": 0,
+          "bits": [ 86 ],
+          "attributes": {
+          }
+        },
         "VGA_G1": {
           "hide_name": 0,
-          "bits": [ 9 ],
+          "bits": [ 10 ],
           "attributes": {
             "src": "top_VGA.v:14.16-14.22"
           }
         },
         "VGA_G2": {
           "hide_name": 0,
-          "bits": [ 9 ],
+          "bits": [ 10 ],
           "attributes": {
             "src": "top_VGA.v:14.24-14.30"
           }
@@ -10120,114 +13692,220 @@
             "src": "top_VGA.v:12.8-12.14"
           }
         },
+        "VGA_HS_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 155 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "VGA_HS_SB_LUT4_O_I3_SB_DFF_Q_D": {
+          "hide_name": 0,
+          "bits": [ 156 ],
+          "attributes": {
+          }
+        },
         "VGA_R0": {
           "hide_name": 0,
-          "bits": [ 8 ],
+          "bits": [ 9 ],
           "attributes": {
             "src": "top_VGA.v:13.8-13.14"
           }
         },
-        "VGA_R0_SB_DFFESS_Q_E": {
+        "VGA_R0_SB_DFFESR_Q_R": {
           "hide_name": 0,
-          "bits": [ 12 ],
+          "bits": [ 157 ],
           "attributes": {
           }
         },
         "VGA_R1": {
           "hide_name": 0,
-          "bits": [ 8 ],
+          "bits": [ 9 ],
           "attributes": {
             "src": "top_VGA.v:13.16-13.22"
           }
         },
         "VGA_R2": {
           "hide_name": 0,
-          "bits": [ 8 ],
+          "bits": [ 9 ],
           "attributes": {
             "src": "top_VGA.v:13.24-13.30"
           }
         },
         "VGA_VS": {
           "hide_name": 0,
-          "bits": [ 7 ],
+          "bits": [ 8 ],
           "attributes": {
             "src": "top_VGA.v:12.16-12.22"
           }
         },
-        "debounceInst1.CLK": {
+        "VGA_VS_SB_LUT4_O_I3": {
+          "hide_name": 0,
+          "bits": [ 158 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/dylancs/.apio/packages/tools-oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22"
+          }
+        },
+        "VGA_VS_SB_LUT4_O_I3_SB_DFF_Q_D": {
+          "hide_name": 0,
+          "bits": [ 159 ],
+          "attributes": {
+          }
+        },
+        "inst1.CLK": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "hdlname": "debounceInst1 CLK",
-            "src": "top_VGA.v:25.17-28.21|Debounce_Switch.v:2.8-2.11"
+            "hdlname": "inst1 CLK",
+            "src": "top_VGA.v:25.11-28.17|SW_toggle.v:2.9-2.12"
           }
         },
-        "debounceInst1.Switch": {
+        "inst1.Instance.CLK": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "inst1 Instance CLK",
+            "src": "top_VGA.v:25.11-28.17|Debounce_Switch.v:2.8-2.11|SW_toggle.v:10.17-13.20"
+          }
+        },
+        "inst1.Instance.Switch": {
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "hdlname": "debounceInst1 Switch",
-            "src": "top_VGA.v:25.17-28.21|Debounce_Switch.v:3.8-3.14"
+            "hdlname": "inst1 Instance Switch",
+            "src": "top_VGA.v:25.11-28.17|Debounce_Switch.v:3.8-3.14|SW_toggle.v:10.17-13.20"
           }
         },
-        "debounceInst2.CLK": {
+        "inst1.i_SW": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "inst1 i_SW",
+            "src": "top_VGA.v:25.11-28.17|SW_toggle.v:3.9-3.13"
+          }
+        },
+        "inst2.CLK": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "hdlname": "debounceInst2 CLK",
-            "src": "top_VGA.v:29.17-32.21|Debounce_Switch.v:2.8-2.11"
+            "hdlname": "inst2 CLK",
+            "src": "top_VGA.v:29.11-32.17|SW_toggle.v:2.9-2.12"
           }
         },
-        "debounceInst2.Switch": {
+        "inst2.Instance.CLK": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "inst2 Instance CLK",
+            "src": "top_VGA.v:29.11-32.17|Debounce_Switch.v:2.8-2.11|SW_toggle.v:10.17-13.20"
+          }
+        },
+        "inst2.Instance.Switch": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "hdlname": "debounceInst2 Switch",
-            "src": "top_VGA.v:29.17-32.21|Debounce_Switch.v:3.8-3.14"
+            "hdlname": "inst2 Instance Switch",
+            "src": "top_VGA.v:29.11-32.17|Debounce_Switch.v:3.8-3.14|SW_toggle.v:10.17-13.20"
           }
         },
-        "debounceInst3.CLK": {
+        "inst2.i_SW": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "inst2 i_SW",
+            "src": "top_VGA.v:29.11-32.17|SW_toggle.v:3.9-3.13"
+          }
+        },
+        "inst3.CLK": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "hdlname": "debounceInst3 CLK",
-            "src": "top_VGA.v:33.17-36.21|Debounce_Switch.v:2.8-2.11"
+            "hdlname": "inst3 CLK",
+            "src": "top_VGA.v:33.11-36.17|SW_toggle.v:2.9-2.12"
           }
         },
-        "debounceInst3.Switch": {
+        "inst3.Instance.CLK": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "inst3 Instance CLK",
+            "src": "top_VGA.v:33.11-36.17|Debounce_Switch.v:2.8-2.11|SW_toggle.v:10.17-13.20"
+          }
+        },
+        "inst3.Instance.Switch": {
           "hide_name": 0,
           "bits": [ 5 ],
           "attributes": {
-            "hdlname": "debounceInst3 Switch",
-            "src": "top_VGA.v:33.17-36.21|Debounce_Switch.v:3.8-3.14"
+            "hdlname": "inst3 Instance Switch",
+            "src": "top_VGA.v:33.11-36.17|Debounce_Switch.v:3.8-3.14|SW_toggle.v:10.17-13.20"
           }
         },
-        "debounceInst4.CLK": {
+        "inst3.i_SW": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "hdlname": "inst3 i_SW",
+            "src": "top_VGA.v:33.11-36.17|SW_toggle.v:3.9-3.13"
+          }
+        },
+        "inst4.CLK": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "hdlname": "debounceInst4 CLK",
-            "src": "top_VGA.v:37.17-40.21|Debounce_Switch.v:2.8-2.11"
+            "hdlname": "inst4 CLK",
+            "src": "top_VGA.v:37.11-40.17|SW_toggle.v:2.9-2.12"
           }
         },
-        "debounceInst4.Switch": {
+        "inst4.Instance.CLK": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "inst4 Instance CLK",
+            "src": "top_VGA.v:37.11-40.17|Debounce_Switch.v:2.8-2.11|SW_toggle.v:10.17-13.20"
+          }
+        },
+        "inst4.Instance.Switch": {
           "hide_name": 0,
           "bits": [ 6 ],
           "attributes": {
-            "hdlname": "debounceInst4 Switch",
-            "src": "top_VGA.v:37.17-40.21|Debounce_Switch.v:3.8-3.14"
+            "hdlname": "inst4 Instance Switch",
+            "src": "top_VGA.v:37.11-40.17|Debounce_Switch.v:3.8-3.14|SW_toggle.v:10.17-13.20"
+          }
+        },
+        "inst4.i_SW": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "inst4 i_SW",
+            "src": "top_VGA.v:37.11-40.17|SW_toggle.v:3.9-3.13"
           }
         },
         "w_Blue": {
           "hide_name": 0,
-          "bits": [ 10, 10, 10 ],
+          "bits": [ 11, 11, 11 ],
           "attributes": {
             "src": "top_VGA.v:23.12-23.18"
           }
         },
+        "w_CountCol": {
+          "hide_name": 0,
+          "bits": [ 32, 30, 28, 26, 24, 22, 20, 18, 16, 13 ],
+          "attributes": {
+            "src": "top_VGA.v:20.12-20.22"
+          }
+        },
+        "w_CountRow": {
+          "hide_name": 0,
+          "bits": [ 61, 59, 57, 55, 53, 51, 49, 47, 45, 42 ],
+          "attributes": {
+            "src": "top_VGA.v:20.24-20.34"
+          }
+        },
         "w_Green": {
           "hide_name": 0,
-          "bits": [ 9, 9, 9 ],
+          "bits": [ 10, 10, 10 ],
           "attributes": {
             "src": "top_VGA.v:22.12-22.19"
           }
@@ -10239,32 +13917,18 @@
             "src": "top_VGA.v:19.55-19.65"
           }
         },
-        "w_HSync_Porch": {
-          "hide_name": 0,
-          "bits": [ "1" ],
-          "attributes": {
-            "src": "top_VGA.v:54.13-54.26"
-          }
-        },
         "w_Red": {
           "hide_name": 0,
-          "bits": [ 8, 8, 8 ],
+          "bits": [ 9, 9, 9 ],
           "attributes": {
             "src": "top_VGA.v:21.12-21.17"
           }
         },
         "w_VSync_PG": {
           "hide_name": 0,
-          "bits": [ 7 ],
+          "bits": [ 8 ],
           "attributes": {
             "src": "top_VGA.v:19.67-19.77"
-          }
-        },
-        "w_VSync_Porch": {
-          "hide_name": 0,
-          "bits": [ "1" ],
-          "attributes": {
-            "src": "top_VGA.v:19.40-19.53"
           }
         }
       }

@@ -22,22 +22,22 @@ wire [2:0] w_Red;
 wire [2:0] w_Green;
 wire [2:0] w_Blue;
 
-Debounce_Switch debounceInst1
+SW_toggle inst1
   (.CLK(CLK),
-   .Switch(SW1),
-   .o_Switch(w_SW1));
-Debounce_Switch debounceInst2
+   .i_SW(SW1),
+   .o_SW(w_SW1));
+SW_toggle inst2
   (.CLK(CLK),
-   .Switch(SW2),
-   .o_Switch(w_SW2));
-Debounce_Switch debounceInst3
+   .i_SW(SW2),
+   .o_SW(w_SW2));
+SW_toggle inst3
   (.CLK(CLK),
-   .Switch(SW3),
-   .o_Switch(w_SW3));
-Debounce_Switch debounceInst4
+   .i_SW(SW3),
+   .o_SW(w_SW3));
+SW_toggle inst4
   (.CLK(CLK),
-   .Switch(SW4),
-   .o_Switch(w_SW4));
+   .i_SW(SW4),
+   .o_SW(w_SW4));
    
 Sync_Pulse PulseInst
  (.CLK(CLK),
@@ -49,8 +49,10 @@ Sync_Pulse PulseInst
 
 Sync_Porch PorchInst
  (.CLK(CLK),
-  .i_H_Sync(w_HSync),
-  .i_V_Sync(w_VSync),
+  .i_HSync(w_HSync),
+  .i_VSync(w_VSync),
+  .i_CountCol(w_CountCol),
+  .i_CountRow(w_CountRow),
   .o_H_Sync(w_HSync_Porch),
   .o_V_Sync(w_VSync_Porch)
   );
@@ -86,3 +88,6 @@ assign VGA_B1 = w_Blue[1];
 assign VGA_B2 = w_Blue[2];
 
 endmodule
+
+//iverilog -o simulation_tb Sync_Pulse.v Sync_Porch.v Pattern_Generator.v Debounce_Switch.v top_VGA.v Sync_Pulse_tb.v
+

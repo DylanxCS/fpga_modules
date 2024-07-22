@@ -1,27 +1,21 @@
 module LED_toggle(
-
-  input	SW1, input SW2,
-  input	SW3, input SW4,
+  input	Switch,
   input CLK,
-  
-  output LED1, output LED2, 
-  output LED3, output LED4
+  output r_LED = 1'b0
 );
  
-reg r_SW1 = 1'b0;
-reg r_LED1 = 1'b0;
-wire w_SW1;
+reg r_SW = 1'b0;
+wire w_SW;
 
 debounce_switch Instance
   (.CLK(CLK),
-   .Switch(SW1),
-   .o_Switch(w_SW1));
+   .Switch(Switch),
+   .o_Switch(w_SW));
 
 always @(posedge CLK) begin
-	r_SW1 <= w_SW1;
-	if (w_SW1 == 1'b0 && r_SW1 == 1'b1) begin
-		r_LED1 <= ~r_LED1;
+	r_SW <= w_SW;
+	if (w_SW == 1'b0 && r_SW == 1'b1) begin
+		r_LED <= ~r_LED;
 	end
 end
-assign LED1 = r_LED1;
 endmodule

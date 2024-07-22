@@ -4,62 +4,18 @@
 //Hsync -> front: 18, back: 50, pulse: 92
 //Vsync -> front: 10, back: 33, pulse: 2
 
+//
 
 module Sync_Porch(
   input CLK,
-  input i_H_Sync,
-  input i_V_Sync,
-  output reg o_H_Sync = 1'b1, 
-  output reg o_V_Sync = 1'b1);
+  input i_HSync,
+  input i_VSync,
+  input [9:0] i_CountCol,
+  input [9:0] i_CountRow,
+  output o_H_Sync, 
+  output o_V_Sync);
   
-  reg r_H_Sync = 1'b1;
-  reg [4:0] r_HCountBP = 0;
-  reg [6:0] r_HCountPulse = 0;
-  
-  reg r_V_Sync = 1'b1;
-  reg [4:0] r_VCountBP = 0;
-  reg [6:0] r_VCountPulse = 0;
-  
-  always @(posedge CLK)
-  begin
-    if (i_H_Sync == 0 && r_HCountBP !== 17) //falling edge
-      r_HCountBP <= r_HCountBP + 1;
-    else
-      r_H_Sync <= 0;
-      
-    if (r_HCountBP == 17 && r_HCountPulse !== 92)
-      r_HCountPulse <= r_HCountPulse + 1;
-    else
-      r_H_Sync <= 1;
-      
-    if (i_H_Sync == 1) 
-      begin
-      r_HCountBP <= 0;
-      r_HCountPulse <= 0; 
-      end
-  end
-  
-  
-  always @(posedge CLK)
-  begin
-    if (i_V_Sync == 0 && r_VCountBP !== 9) //falling edge
-      r_VCountBP <= r_VCountBP + 1;
-    else
-      r_V_Sync <= 0;
-      
-    if (r_VCountBP == 9 && r_VCountPulse !== 2)
-      r_VCountPulse <= r_VCountPulse + 1;
-    else
-      r_V_Sync <= 1;
-      
-    if (i_V_Sync == 1) 
-      begin
-      r_VCountBP <= 0;
-      r_VCountPulse <= 0; 
-      end
-   end
-   
-  assign o_H_Sync = r_H_Sync;
-  assign o_V_Sync = r_V_Sync;
+  assign o_H_Sync = (i_CountCol < 640+18 || i_CountCol > 800-50-1) ? 1'b1 : i_HSync;
+  assign o_V_Sync = (i_CountRow < 480+10 || i_CountRow > 525-33-1) ? 1'b1 : i_VSync;
   
 endmodule

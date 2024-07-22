@@ -39,7 +39,7 @@ module Sync_Pulse_tb();
     $dumpfile("dump.vcd");
     $dumpvars(0);
     
-    #500000
+    #85000000
     $finish;
     end
   

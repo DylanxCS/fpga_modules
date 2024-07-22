@@ -25,7 +25,7 @@ assign o_VSync = (o_CountRow < 480) ? 1'b1 : 1'b0;
 endmodule
 
 // 800 Col by 525 Row
-// 640 Col Active, 160 Col H-Sync
-// 480 Row Active, 45 Row V-Sync
+// 640 Col Active
+// 480 Row Active
 
 // 25 Mhz Clock / (800 by 525) Area = 60 Hz refresh rate (60 clock cycles per pixel per second)
