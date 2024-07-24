@@ -7,38 +7,87 @@
 // figure out VGA display and UART on windows
  
 module top_VGA(
-input CLK,
-input SW1, SW2, SW3, SW4,
+input CLK, RX,
 output VGA_HS, VGA_VS, 
 output VGA_R0, VGA_R1, VGA_R2,
 output VGA_G0, VGA_G1, VGA_G2, 
-output VGA_B0, VGA_B1, VGA_B2
+output VGA_B0, VGA_B1, VGA_B2,
+output TX,
+output S1_A, S1_B, S1_C, S1_D, S1_E, S1_F, S1_G,
+output S2_A, S2_B, S2_C, S2_D, S2_E, S2_F, S2_G
+//output [7:0] RX_Byte
 );
-
-wire w_SW1, w_SW2, w_SW3, w_SW4;
+//A - 011 1101 -> 3D
+//a - 100 0111 -> 47
 wire w_HSync, w_VSync, w_HSynch_Porch, w_VSync_Porch, w_HSync_PG, w_VSync_PG;
 wire [9:0] w_CountCol, w_CountRow;
 wire [2:0] w_Red;
 wire [2:0] w_Green;
 wire [2:0] w_Blue;
 
-SW_toggle inst1
-  (.CLK(CLK),
-   .i_SW(SW1),
-   .o_SW(w_SW1));
-SW_toggle inst2
-  (.CLK(CLK),
-   .i_SW(SW2),
-   .o_SW(w_SW2));
-SW_toggle inst3
-  (.CLK(CLK),
-   .i_SW(SW3),
-   .o_SW(w_SW3));
-SW_toggle inst4
-  (.CLK(CLK),
-   .i_SW(SW4),
-   .o_SW(w_SW4));
-   
+wire w_S1_A, w_S1_B, w_S1_C, w_S1_D, w_S1_E, w_S1_F, w_S1_G, w_S2_A, w_S2_B, w_S2_C, w_S2_D, w_S2_E, w_S2_F, w_S2_G;
+
+//UART
+wire w_RX_DV;
+wire [7:0] w_RX_Byte;
+wire w_TX_Active, w_TX_Serial;
+
+UART_TX #(.CLKS_PER_BIT(217)) UART_TX_Inst
+ (.CLK(CLK),
+  .i_TX_DV(w_RX_DV),
+  .i_TX_Byte(w_RX_Byte), 
+  .TX(w_TX_Serial),
+  .o_TX_Active(w_TX_Active),
+  .o_TX_Done());
+  
+assign TX = w_TX_Active ? w_TX_Serial : 1'b1;
+//assign RX_Byte = w_RX_Byte;
+
+UART_RX #(.CLKS_PER_BIT(217)) UART_RX_Inst(
+.CLK(CLK),
+.RX(RX),
+.o_RX_DV(w_RX_DV),
+.o_RX_Byte(w_RX_Byte));
+
+Binary_To_Seven_Seg binary_to_7seg_Inst1(
+.CLK(CLK),
+.binary_num(w_RX_Byte[7:4]),
+.o_S1_A(w_S1_A),
+.o_S1_B(w_S1_B),
+.o_S1_C(w_S1_C),
+.o_S1_D(w_S1_D),
+.o_S1_E(w_S1_E),
+.o_S1_F(w_S1_F),
+.o_S1_G(w_S1_G));
+
+assign S1_A = ~w_S1_A;
+assign S1_B = ~w_S1_B;
+assign S1_C = ~w_S1_C;
+assign S1_D = ~w_S1_D;
+assign S1_E = ~w_S1_E;
+assign S1_F = ~w_S1_F;
+assign S1_G = ~w_S1_G;
+
+Binary_To_Seven_Seg binary_to_7seg_Inst2(
+.CLK(CLK),
+.binary_num(w_RX_Byte[3:0]),
+.o_S1_A(w_S2_A),
+.o_S1_B(w_S2_B),
+.o_S1_C(w_S2_C),
+.o_S1_D(w_S2_D),
+.o_S1_E(w_S2_E),
+.o_S1_F(w_S2_F),
+.o_S1_G(w_S2_G));
+
+assign S2_A = ~w_S2_A;
+assign S2_B = ~w_S2_B;
+assign S2_C = ~w_S2_C;
+assign S2_D = ~w_S2_D;
+assign S2_E = ~w_S2_E;
+assign S2_F = ~w_S2_F;
+assign S2_G = ~w_S2_G;
+
+
 Sync_Pulse PulseInst
  (.CLK(CLK),
   .o_HSync(w_HSync),
@@ -59,10 +108,7 @@ Sync_Porch PorchInst
 
 Pattern_Generator Pattern_GenInst
  (.CLK(CLK),
-  .i_SW1(SW1), 
-  .i_SW2(SW2), 
-  .i_SW3(SW3), 
-  .i_SW4(SW4),
+  .i_Byte(w_RX_Byte),
   .i_HSync(w_HSync_Porch),
   .i_VSync(w_VSync_Porch),
   .o_HSync_PG(w_HSync_PG),
@@ -89,5 +135,5 @@ assign VGA_B2 = w_Blue[2];
 
 endmodule
 
-//iverilog -o simulation_tb Sync_Pulse.v Sync_Porch.v Pattern_Generator.v Debounce_Switch.v top_VGA.v Sync_Pulse_tb.v
+//iverilog -o simulation_tb Sync_Pulse.v Sync_Porch.v Pattern_Generator.v Binary_To_Seven_Seg.v UART_TX.v UART_RX.v top_VGA.v VGA_tb.v
 

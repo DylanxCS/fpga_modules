@@ -29,7 +29,7 @@ output S2_F,
 output S2_G);
 
 wire w_RX_DV;
-reg [7:0] w_RX_Byte;
+wire [7:0] w_RX_Byte;
 wire w_TX_Active, w_TX_Serial;
 
 //wire w_RX;
@@ -55,7 +55,7 @@ wire w_S2_G;
    .TX(w_TX_Serial),
    .o_TX_Active(w_TX_Active),
    .o_TX_Done());
-
+//sudo apt-get install chromium-browser
 assign TX = w_TX_Active ? w_TX_Serial : 1'b1;
 
 UART_RX #(.CLKS_PER_BIT(217)) UART_RX_Inst(

@@ -5,7 +5,6 @@
 // This testbench will exercise the UART RX.
 // It sends out byte 0x37, and ensures the RX receives it correctly.
 `timescale 1ns/10ps
-`include "UART_RX.v"
 module UART_TX_TB();
 
   // Testbench uses a 25 MHz clock (same as Go Board)

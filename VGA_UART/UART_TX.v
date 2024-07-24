@@ -18,8 +18,8 @@ module UART_TX
    input 	i_TX_DV,
    input [7:0] 	i_TX_Byte,
    output reg   TX,
-   output 	o_TX_Active,
-   output 	o_TX_Done);
+   output	o_TX_Active,
+   output	o_TX_Done);
    
   parameter IDLE         = 3'b000;
   parameter TX_START_BIT = 3'b001;
@@ -132,7 +132,6 @@ module UART_TX
         r_SM_Main <= IDLE;
     endcase
   end    
-  
   assign o_TX_Active = r_TX_Active;
   assign o_TX_Done   = r_TX_Done;
   

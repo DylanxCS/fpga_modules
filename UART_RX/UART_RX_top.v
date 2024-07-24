@@ -1,5 +1,6 @@
 //https://wiki.emacinc.com/wiki/Getting_Started_With_Minicom
 //right side usb is serial port ttyUSB1
+// Find BAUD rate: stty < /dev/ttyUSB1
 // minicom instructions:
 // UART RX is configured under minicom port created titled ttyS12
 // sudo minicom -s       or ttyS12 to configure existing instance

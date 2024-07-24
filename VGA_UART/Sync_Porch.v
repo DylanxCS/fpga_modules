@@ -15,7 +15,7 @@ module Sync_Porch(
   output o_H_Sync, 
   output o_V_Sync);
   
-  assign o_H_Sync = (i_CountCol < 640+18 || i_CountCol > 800-50-1) ? 1'b1 : i_HSync;
-  assign o_V_Sync = (i_CountRow < 480+10 || i_CountRow > 525-33-1) ? 1'b1 : i_VSync;
+  assign o_H_Sync = (i_CountCol < 640+18-1 || i_CountCol > 800-50-2) ? 1'b1 : 1'b0;
+  assign o_V_Sync = (i_CountRow < 480+10-1 || i_CountRow > 525-33-2) ? 1'b1 : 1'b0;
   
 endmodule
